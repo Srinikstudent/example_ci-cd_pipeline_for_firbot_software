@@ -1,0 +1,35 @@
+image: python:3.9
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+    - venv/
+
+before_script:
+  - python --version 
+  - pip install virtualenv
+  - python -m venv venv
+  - source venv/bin/activate
+  - pip install -r requirements.txt
+
+build:
+  stage : build
+  script:
+    - pip install --upgrade pip
+
+test:
+  stage : test
+  script:
+       - python -m unit_test
+       - python -m unittest unit_test1
+
+deploy:
+  stage: deploy
+  before_script:
+    - echo 'build docker-ros-image here'
+  script:
+    - echo 'deploy_fire_bot_software'
+
