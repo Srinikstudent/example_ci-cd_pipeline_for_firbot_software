@@ -1,6 +1,6 @@
-# Fire_Localisation
+this is example ci/cd pipeline i set to exaplain to my team and stake holders how we are going to implement on out gitlab server to automate firebot software.
 
-Faster R-CNN NETWORK
+
 
 ## Getting started
 
